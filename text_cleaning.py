@@ -1,6 +1,4 @@
-import pandas as pd
 import huspacy
-from import_docx import *
 
 nlp = huspacy.load('hu_core_news_lg')
 from tqdm.notebook import tqdm

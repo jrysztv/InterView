@@ -123,4 +123,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-test.csv
+# data
+corpus.csv
+corpus_sented.csv
+embedding.npy
+
+# Workspace files
+.idea/
