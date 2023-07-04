@@ -130,3 +130,13 @@ embedding.npy
 
 # Workspace files
 .idea/
+
+test.ipynb
+
+test.py
+
+work_files/embedding_sentences.npy
+
+work_files/embedding_text.npy
+
+work_files/test.csv

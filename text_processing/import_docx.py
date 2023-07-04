@@ -90,4 +90,4 @@ class DocumentToDataFrame:
 if __name__ == '__main__':
     corpus_generator = DocumentToDataFrame(data_folder='../data')
     corpus = corpus_generator.generate_corpus()
-    corpus.to_csv('../work-files/corpus.csv', index=False)
+    corpus.to_csv('../work_files/corpus.csv', index=False)
