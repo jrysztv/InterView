@@ -26,7 +26,7 @@ def sentencize_dataframe(
         dataframe: Optional[pd.DataFrame] = None,
         save_to_file: bool = True,
         text_column: str = 'text',
-        save_path: str = './work-files/corpus_sented.csv',
+        save_path: str = './work_files/corpus_sented.csv',
         document_columns: List[str] = None
 ) -> pd.DataFrame:
     """
@@ -37,7 +37,7 @@ def sentencize_dataframe(
             Default is None.
         save_to_file (bool): Whether to save the resulting DataFrame to a file. Default is True.
         text_column (str): The name of the column in the DataFrame containing the text. Default is 'text'.
-        save_path (str): Path to save sentenced DataFrame. Default is './work-files/corpus_sented.csv'.
+        save_path (str): Path to save sentenced DataFrame. Default is './work_files/corpus_sented.csv'.
         document_columns (List[str]): List of category column names. Default is None.
 
     Returns:
@@ -47,7 +47,7 @@ def sentencize_dataframe(
         document_columns = ['doc_id', 'id', 'text']
 
     if dataframe is None:
-        dataframe = pd.read_csv('./work-files/corpus.csv')
+        dataframe = pd.read_csv('./work_files/corpus.csv')
 
     sentences_dataframe = pd.merge(
         dataframe[document_columns],
