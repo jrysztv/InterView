@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from typing import List
 
 import pandas as pd
@@ -13,7 +14,7 @@ class DocumentToDataFrame:
         Args:
             data_folder (str): Path to the folder containing the data files. Default is './data/'.
         """
-        self.data_folder = data_folder if data_folder.endswith(('/', '\\')) else data_folder + '/'
+        self.data_folder = Path(data_folder)
 
     def convert_docs_to_strings(self) -> pd.DataFrame:
         """
@@ -70,7 +71,8 @@ class DocumentToDataFrame:
                        '[Valaki suttogva', '[Viccből]']
         document_corpus = document_corpus[document_corpus.id.str.count(' ') < 2]
         document_corpus = document_corpus[~document_corpus.id.isin(invalid_ids)]
-        document_corpus['id'] = document_corpus['id'].str.replace('[^a-zA-ZáéíóöőüűÁÉÍÓÖŐÜŰ\s]', '', regex=True)
+        document_corpus['id'] = document_corpus['id'].str.replace('[^a-zA-ZáéíóöőüűÁÉÍÓÖŐÜŰ\s]', '',
+                                                                  regex=True).str.replace(' {2,}', ' ', regex=True)
         document_corpus = document_corpus[document_corpus['id'] != '']
         return document_corpus
 

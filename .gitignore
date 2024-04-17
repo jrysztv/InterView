@@ -140,3 +140,19 @@ work_files/embedding_sentences.npy
 work_files/embedding_text.npy
 
 work_files/test.csv
+
+text_processing/email_cleaning.py
+
+text_processing/import_pst.py
+
+text_processing/topic_modeling_advance.ipynb
+
+text_processing/topic_modeling_deprecated.py
+
+*.npy
+
+*.csv
+
+*.xlsx
+
+results/
